@@ -1,0 +1,106 @@
+/* -------------------- universal start -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+/* -------------------- universal end -------------------- */
+
+/* -------------------- main-container start -------------------- */
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #31343a;
+}
+
+.main-container .game-grid-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  width: 225px;
+  height: 225px;
+}
+
+.main-container .game-grid-box {
+  position: relative;
+  border: 2px solid #000000;
+}
+
+.main-container .top-left {
+  border-top: none;
+  border-left: none;
+}
+
+.main-container .top-center {
+  border-top: none;
+}
+
+.main-container .top-right {
+  border-top: none;
+  border-right: none;
+}
+
+.main-container .center-left {
+  border-left: none;
+}
+
+.main-container .center-right {
+  border-right: none;
+}
+
+.main-container .bottom-left {
+  border-left: none;
+  border-bottom: none;
+}
+
+.main-container .bottom-center {
+  border-bottom: none;
+}
+
+.main-container .bottom-right {
+  border-right: none;
+  border-bottom: none;
+}
+
+.main-container .circle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 45px;
+  height: 45px;
+}
+
+.main-container .circle-hover {
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 45px;
+  height: 45px;
+}
+
+.main-container .cross {
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 45px;
+  height: 45px;
+}
+
+.main-container .cross-hover {
+  display: none;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 45px;
+  height: 45px;
+}
+/* -------------------- main-container end -------------------- */
