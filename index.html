@@ -18,59 +18,68 @@
   <!-------------------- main-container start -------------------->
   <div class="main-container">
     <div class="game-grid-container">
+      <!-- top left -->
       <div class="game-grid-box top-left" onmouseover="hoverTopLeftOver()" onmouseout="hoverTopLeftOut()" onclick="fillTopLeft()">
         <img class="circle" id="top-left-img-circle" src="image/circle.png">
         <img class="circle-hover" id="top-left-img-circle-hover" src="image/circle-hover.png">
         <img class="cross" id="top-left-img-cross" src="image/cross.png">
         <img class="cross-hover" id="top-left-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box top-center" onmouseover="hoverTopLeftOver()" onmouseout="hoverTopLeftOut()" onclick="fillTopLeft()">
-        <img class="circle" src="image/circle.png">
-        <img class="circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
-        <img class="cross-hover" src="image/cross-hover.png">
+      <!-- top center -->
+      <div class="game-grid-box top-center" onmouseover="hoverTopCenterOver()" onmouseout="hoverTopCenterOut()" onclick="fillTopCenter()">
+        <img class="circle" id="top-center-img-circle" src="image/circle.png">
+        <img class="circle-hover" id="top-center-img-circle-hover" src="image/circle-hover.png">
+        <img class="cross" id="top-center-img-cross" src="image/cross.png">
+        <img class="cross-hover" id="top-center-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box top-right">
-        <img class="circle" src="image/circle.png">
-        <img class="circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
-        <img class="cross-hover" src="image/cross-hover.png">
+      <!-- top right -->
+      <div class="game-grid-box top-right" onmouseover="hoverTopRightOver()" onmouseout="hoverTopRightOut()" onclick="fillTopRight()">
+        <img class="circle" id="top-right-img-circle" src="image/circle.png">
+        <img class="circle-hover" id="top-right-img-circle-hover" src="image/circle-hover.png">
+        <img class="cross" id="top-right-img-cross" src="image/cross.png">
+        <img class="cross-hover" id="top-right-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box center-left">
-        <img class="circle" src="image/circle.png">
-        <img class="circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
-        <img class="cross-hover" src="image/cross-hover.png">
+      <!-- center left -->
+      <div class="game-grid-box center-left" onmouseover="hoverCenterLeftOver()" onmouseout="hoverCenterLeftOut()" onclick="fillCenterLeft()">
+        <img class="circle" id="center-left-img-circle" src="image/circle.png">
+        <img class="circle-hover" id="center-left-img-circle-hover" src="image/circle-hover.png">
+        <img class="cross" id="center-left-img-cross" src="image/cross.png">
+        <img class="cross-hover" id="center-left-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box">
-        <img class="circle" src="image/circle.png">
-        <img class="circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
-        <img class="cross-hover" src="image/cross-hover.png">
+      <!-- center -->
+      <div class="game-grid-box" onmouseover="hoverCenterOver()" onmouseout="hoverCenterOut()" onclick="fillCenter()">
+        <img class="circle" id="center-img-circle" src="image/circle.png">
+        <img class="circle-hover" id="center-img-circle-hover" src="image/circle-hover.png">
+        <img class="cross" id="center-img-cross" src="image/cross.png">
+        <img class="cross-hover" id="center-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box center-right">
-        <img class="circle" src="image/circle.png">
-        <img class="circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
-        <img class="cross-hover" src="image/cross-hover.png">
+      <!-- center right -->
+      <div class="game-grid-box center-right" onmouseover="hoverCenterRightOver()" onmouseout="hoverCenterRightOut()" onclick="fillCenterRight()">
+        <img class="circle" id="center-right-img-circle" src="image/circle.png">
+        <img class="circle-hover" id="center-right-img-circle-hover" src="image/circle-hover.png">
+        <img class="cross" id="center-right-img-cross" src="image/cross.png">
+        <img class="cross-hover" id="center-right-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box bottom-left">
-        <img class="circle" src="image/circle.png">
-        <img class="circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
-        <img class="cross-hover" src="image/cross-hover.png">
+      <!-- bottom left -->
+      <div class="game-grid-box bottom-left" onmouseover="hoverBottomLeftOver()" onmouseout="hoverBottomLeftOut()" onclick="fillBottomLeft()">
+        <img class="circle" id="bottom-left-img-circle" src="image/circle.png">
+        <img class="circle-hover" id="bottom-left-img-circle-hover" src="image/circle-hover.png">
+        <img class="cross" id="bottom-left-img-cross" src="image/cross.png">
+        <img class="cross-hover" id="bottom-left-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box bottom-center">
-        <img class="circle" src="image/circle.png">
-        <img class="circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
-        <img class="cross-hover" src="image/cross-hover.png">
+      <!-- bottom center -->
+      <div class="game-grid-box bottom-center" onmouseover="hoverBottomCenterOver()" onmouseout="hoverBottomCenterOut()" onclick="fillBottomCenter()">
+        <img class="circle" id="bottom-center-img-circle" src="image/circle.png">
+        <img class="circle-hover" id="bottom-center-img-circle-hover" src="image/circle-hover.png">
+        <img class="cross" id="bottom-center-img-cross" src="image/cross.png">
+        <img class="cross-hover" id="bottom-center-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box bottom-right">
-        <img class="circle" src="image/circle.png">
-        <img class="circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
-        <img class="cross-hover" src="image/cross-hover.png">
+      <!-- bottom right -->
+      <div class="game-grid-box bottom-right" onmouseover="hoverBottomRightOver()" onmouseout="hoverBottomRightOut()" onclick="fillBottomRight()">
+        <img class="circle" id="bottom-right-img-circle" src="image/circle.png">
+        <img class="circle-hover" id="bottom-right-img-circle-hover" src="image/circle-hover.png">
+        <img class="cross" id="bottom-right-img-cross" src="image/cross.png">
+        <img class="cross-hover" id="bottom-right-img-cross-hover" src="image/cross-hover.png">
       </div>
     </div>
   </div>
