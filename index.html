@@ -18,13 +18,13 @@
   <!-------------------- main-container start -------------------->
   <div class="main-container">
     <div class="game-grid-container">
-      <div class="game-grid-box top-left" onmouseover="hoverTopLeftOver()" onmouseout="hoverTopLeftOut()">
-        <img class="circle" src="image/circle.png">
+      <div class="game-grid-box top-left" onmouseover="hoverTopLeftOver()" onmouseout="hoverTopLeftOut()" onclick="fillTopLeft()">
+        <img class="circle" id="top-left-img-circle" src="image/circle.png">
         <img class="circle-hover" id="top-left-img-circle-hover" src="image/circle-hover.png">
-        <img class="cross" src="image/cross.png">
+        <img class="cross" id="top-left-img-cross" src="image/cross.png">
         <img class="cross-hover" id="top-left-img-cross-hover" src="image/cross-hover.png">
       </div>
-      <div class="game-grid-box top-center">
+      <div class="game-grid-box top-center" onmouseover="hoverTopLeftOver()" onmouseout="hoverTopLeftOut()" onclick="fillTopLeft()">
         <img class="circle" src="image/circle.png">
         <img class="circle-hover" src="image/circle-hover.png">
         <img class="cross" src="image/cross.png">
