@@ -1,3 +1,59 @@
+/******************** name popup start ********************/
+ var errorCount = 0;
+
+var nameContainer = document.getElementById('name-container');
+var firstTitle = document.getElementById('first-title-name');
+var secondTitle = document.getElementById('second-title-name');
+
+function start() {
+  var firstName = document.getElementById('first-name').value.trim();
+  var secondName = document.getElementById('second-name').value.trim();
+  console.log(firstName.length);
+  if(firstName.length > 0 & secondName.length > 0) {
+    firstTitle.innerHTML = firstName;
+    secondTitle.innerHTML = secondName;
+    nameContainer.style.display = "none";
+  }
+  else {
+    if(errorCount == 0) {
+      errorCount++;
+      document.getElementById('error-message-first').style.display = "block";
+    }
+    else if (errorCount == 1) {
+      errorCount++;
+      document.getElementById('error-message-first').style.display = "none";
+      document.getElementById('error-message-second').style.display = "block";
+    }
+    else if (errorCount == 2) {
+      errorCount++;
+      document.getElementById('error-message-second').style.display = "none";
+      document.getElementById('error-message-third').style.display = "block";
+    }
+    else if (errorCount == 3) {
+      errorCount++;
+      document.getElementById('error-message-third').style.display = "none";
+      document.getElementById('error-message-fourth').style.display = "block";
+    }
+    else if (errorCount == 4) {
+      document.getElementById('bye-bye-container').style.display = "block";
+    }
+  }
+}
+
+function skip() {
+  document.getElementById('error-message-first').style.display = "none";
+  document.getElementById('error-message-second').style.display = "none";
+  document.getElementById('error-message-third').style.display = "none";
+  document.getElementById('error-message-fourth').style.display = "none";
+  document.getElementById('error-message-fifth').style.display = "none";
+}
+
+function checkInput() {
+  errorMessage.style.display = "none";
+}
+/******************** name popup end ********************/
+
+/******************** tic-tac-toe start ********************/
 /* fill values for all nine blocks */
 var topLeft = 0, topCenter = 0, topRight = 0, centerLeft = 0, center = 0,
 centerRight = 0, bottomLeft = 0, bottomCenter = 0, bottomRight = 0;
@@ -45,6 +101,7 @@ function fillTopLeft() {
       topLeft = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
@@ -89,6 +146,7 @@ function fillTopCenter() {
       topCenter = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
@@ -133,6 +191,7 @@ function fillTopRight() {
       topRight = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
@@ -177,6 +236,7 @@ function fillCenterLeft() {
       centerLeft = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
@@ -221,6 +281,7 @@ function fillCenter() {
       center = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
@@ -265,6 +326,7 @@ function fillCenterRight() {
       centerRight = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
@@ -309,6 +371,7 @@ function fillBottomLeft() {
       bottomLeft = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
@@ -353,6 +416,7 @@ function fillBottomCenter() {
       bottomCenter = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
@@ -375,7 +439,7 @@ function hoverBottomRightOver() {
   }
 }
 
-/* function for center right block out */
+/* function for bottom right block out */
 function hoverBottomRightOut() {
   if(bottomRight == 0) {
     bottomRightImgHoverCross.style.display = "none";
@@ -397,6 +461,66 @@ function fillBottomRight() {
       bottomRight = 2;
     }
     count++;
+    combinationCheck();
     console.log("fill work");
   }
 }
+
+/* function for combination */
+function combinationCheck() {
+  if(count > 4) {
+    if((topLeft == 1 & topCenter == 1 & topRight == 1) ||
+    (centerLeft == 1 & center == 1 & centerRight == 1) ||
+    (bottomLeft == 1 & bottomCenter == 1 & bottomRight == 1) ||
+    (topLeft == 1 & centerLeft == 1 & bottomLeft == 1) ||
+    (topCenter == 1 & center == 1 & bottomCenter == 1) ||
+    (topRight == 1 & centerRight == 1 & bottomRight == 1) ||
+    (topLeft == 1 & center == 1 & bottomRight == 1) ||
+    (topRight == 1 & center == 1 & bottomLeft == 1)) {
+      resetAll();
+      alert("Winer is Cross !!");
+    } else if ((topLeft == 2 & topCenter == 2 & topRight == 2) ||
+    (centerLeft == 2 & center == 2 & centerRight == 2) ||
+    (bottomLeft == 2 & bottomCenter == 2 & bottomRight == 2) ||
+    (topLeft == 2 & centerLeft == 2 & bottomLeft == 2) ||
+    (topCenter == 2 & center == 2 & bottomCenter == 2) ||
+    (topRight == 2 & centerRight == 2 & bottomRight == 2) ||
+    (topLeft == 2 & center == 2 & bottomRight == 2) ||
+    (topRight == 2 & center == 2 & bottomLeft == 2)) {
+      resetAll();
+      alert("Winer is Circle !!");
+    } else if (count == 9) {
+      resetAll();
+      alert("Match Draw");
+    }
+  }
+}
+
+/* function for reset all */
+function resetAll() {
+  topLeft = 0; topCenter = 0; topRight = 0; centerLeft = 0; center = 0;
+  centerRight = 0; bottomLeft = 0; bottomCenter = 0; bottomRight = 0;
+  count = 0;
+  topLeftImgCross.style.display = "none";
+  topLeftImgHoverCross.style.display = "none";
+  topLeftImgCircle.style.display = "none";
+  topLeftImgHoverCircle.style.display = "none";
+
+  topCenterImgCross.style.display = "none";
+  topCenterImgCircle.style.display = "none";
+  topRightImgCross.style.display = "none";
+  topRightImgCircle.style.display = "none";
+  centerLeftImgCross.style.display = "none";
+  centerLeftImgCircle.style.display = "none";
+  centerImgCross.style.display = "none";
+  centerImgCircle.style.display = "none";
+  centerRightImgCross.style.display = "none";
+  centerRightImgCircle.style.display = "none";
+  bottomLeftImgCross.style.display = "none";
+  bottomLeftImgCircle.style.display = "none";
+  bottomCenterImgCross.style.display = "none";
+  bottomCenterImgCircle.style.display = "none";
+  bottomRightImgCross.style.display = "none";
+  bottomRightImgCircle.style.display = "none";
+}
+/******************** tic-tac-toe end ********************/

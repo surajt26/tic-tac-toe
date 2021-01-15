@@ -5,70 +5,258 @@
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: #31343a;
 }
 /* -------------------- universal end -------------------- */
 
-/* -------------------- main-container start -------------------- */
-.main-container {
+/* -------------------- bye bye start -------------------- */
+.bye-bye-container {
+  display: none;
+  position: relative;
   width: 100vw;
   height: 100vh;
   background-color: #31343a;
+  z-index: 20;
 }
 
-.main-container .game-grid-container {
-  position: relative;
+.bye-bye-container h1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  color: #cccccc;
+  z-index: 20;
+}
+/* -------------------- bye bye end -------------------- */
+
+/* -------------------- popup start -------------------- */
+.name-container {
+  overflow: hidden;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  width: 600px;
+  height: 420px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.name-container h2 {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+}
+
+.name-container img {
+  margin: 20px 50%;
+  transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  width: 125px;
+  height: 125px;
+  border-radius: 5px;
+}
+
+.name-container .name-headline {
+  width: 100%;
+  text-align: center;
+}
+
+.name-container .player-name {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  margin-top: 20px;
+}
+
+.name-container .name input[type="text"] {
+  width: 60%;
+  margin: 0 50%;
+  transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  padding: 4px;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.5);
+  outline: none;
+}
+
+.name-container .start {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.name-container .start:hover {
+  color: #31343a;
+}
+
+.name-container .skip {
+  margin: 10px auto 0;
+  width: 30px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.name-container .skip:hover {
+  color: #31343a;
+  border-bottom: 1px solid #31343a;
+}
+
+.name-container .skip:hover ~ #error-message {
+  margin-top: 19px;
+}
+
+.name-container .error-message {
+  display: none;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #ff0000;
+}
+
+/* media for 600 width */
+@media only screen and (max-width: 600px) {
+  .name-container {
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+/* media for 450 width */
+@media only screen and (max-width: 450px) {
+  .name-container .player-name {
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 40px);
+  }
+
+  .name-container .start {
+    margin-top: 0;
+  }
+
+  .name-container .skip {
+    margin-top: 5px;
+  }
+}
+/* -------------------- popup end -------------------- */
+
+/* -------------------- main grid star -------------------- */
+.main-grid {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  width: 420px;
+  height: 410px;
+  border: 1px solid yellow;
+}
+/* -------------------- main grid end -------------------- */
+
+/* -------------------- round start -------------------- */
+.round {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid red;
+}
+
+.round p {
+  width: 100%;
+  text-align: center;
+}
+
+.round .round-point {
+  font-size: 34px;
+  color: #ffffff;
+}
+
+.round .round-title {
+  font-size: 22px;
+  color: #cccccc;
+}
+/* -------------------- round end -------------------- */
+
+/* -------------------- game-grid-container start -------------------- */
+.game-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   width: 225px;
   height: 225px;
+  margin: 25px auto;
 }
 
-.main-container .game-grid-box {
+.game-grid-container .game-grid-box {
   position: relative;
   border: 2px solid #000000;
 }
 
-.main-container .top-left {
+.game-grid-container .top-left {
   border-top: none;
   border-left: none;
 }
 
-.main-container .top-center {
+.game-grid-container .top-center {
   border-top: none;
 }
 
-.main-container .top-right {
+.game-grid-container .top-right {
   border-top: none;
   border-right: none;
 }
 
-.main-container .center-left {
+.game-grid-container .center-left {
   border-left: none;
 }
 
-.main-container .center-right {
+.game-grid-container .center-right {
   border-right: none;
 }
 
-.main-container .bottom-left {
+.game-grid-container .bottom-left {
   border-left: none;
   border-bottom: none;
 }
 
-.main-container .bottom-center {
+.game-grid-container .bottom-center {
   border-bottom: none;
 }
 
-.main-container .bottom-right {
+.game-grid-container .bottom-right {
   border-right: none;
   border-bottom: none;
 }
 
-.main-container .circle {
+.game-grid-container .circle {
   display: none;
   position: absolute;
   top: 15px;
@@ -77,7 +265,7 @@
   height: 45px;
 }
 
-.main-container .circle-hover {
+.game-grid-container .circle-hover {
   display: none;
   position: absolute;
   top: 15px;
@@ -86,7 +274,7 @@
   height: 45px;
 }
 
-.main-container .cross {
+.game-grid-container .cross {
   display: none;
   position: absolute;
   top: 15px;
@@ -95,7 +283,7 @@
   height: 45px;
 }
 
-.main-container .cross-hover {
+.game-grid-container .cross-hover {
   display: none;
   position: absolute;
   top: 15px;
@@ -103,4 +291,36 @@
   width: 45px;
   height: 45px;
 }
-/* -------------------- main-container end -------------------- */
+/* -------------------- game-grid-container start -------------------- */
+
+/* -------------------- match detail grid container end -------------------- */
+.match-detail-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.match-detail-grid-container p {
+  width: 100%;
+  text-align: center;
+}
+
+.match-detail-grid-container .player-point {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.match-detail-grid-container .title-name {
+  margin-top: 10px;
+  font-size: 22px;
+  color: #cccccc;
+}
+
+@media only screen and (max-width: 600px) {
+  .match-detail-grid-container {
+    width: 100%;
+  }
+}
+/* -------------------- match detail grid container end -------------------- */
