@@ -41,15 +41,15 @@ function start() {
 }
 
 function skip() {
+  nameContainer.style.display = "none";
+}
+
+function checkInput() {
   document.getElementById('error-message-first').style.display = "none";
   document.getElementById('error-message-second').style.display = "none";
   document.getElementById('error-message-third').style.display = "none";
   document.getElementById('error-message-fourth').style.display = "none";
   document.getElementById('error-message-fifth').style.display = "none";
-}
-
-function checkInput() {
-  errorMessage.style.display = "none";
 }
 /******************** name popup end ********************/
 

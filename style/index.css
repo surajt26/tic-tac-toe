@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #31343a;
+  background-color: #ecf0f3;
 }
 /* -------------------- universal end -------------------- */
 
@@ -40,7 +40,7 @@ body {
 
 /* -------------------- popup start -------------------- */
 .name-container {
-  overflow: hidden;
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -168,6 +168,9 @@ body {
 
 /* -------------------- main grid star -------------------- */
 .main-grid {
+  display: grid;
+  grid-template-columns: 175px 200px 175px;
+  column-gap: 25px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -176,151 +179,111 @@ body {
   -ms-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
-  width: 420px;
-  height: 410px;
-  border: 1px solid yellow;
 }
 /* -------------------- main grid end -------------------- */
 
-/* -------------------- round start -------------------- */
-.round {
-  width: 100%;
-  margin: 0 auto;
-  border: 1px solid red;
+/* -------------------- round & draw start -------------------- */
+.round-draw-container {
+  display: grid;
+  grid-template-rows: repeat(3, 50px);
+  padding: 5px 0;
+  row-gap: 20px;
 }
 
-.round p {
-  width: 100%;
-  text-align: center;
+.round-draw-container .round-draw-top,
+.round-draw-container .round-draw-bottom {
+  display: grid;
+  grid-template-columns: 100px 50px;
+  column-gap: 10px;
 }
 
-.round .round-point {
-  font-size: 34px;
-  color: #ffffff;
+.round-draw-container .round-draw-center {
+  display: grid;
+  grid-template-columns: 50px 100px;
+  column-gap: 10px;
 }
 
-.round .round-title {
-  font-size: 22px;
-  color: #cccccc;
+.round-draw-container .round-name,
+.round-draw-container .round-number,
+.round-draw-container .time,
+.round-draw-container .time-name,
+.round-draw-container .draw-name,
+.round-draw-container .draw-number {
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px #ffffff;
 }
-/* -------------------- round end -------------------- */
+/* -------------------- round & draw end -------------------- */
 
 /* -------------------- game-grid-container start -------------------- */
 .game-grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  width: 225px;
-  height: 225px;
-  margin: 25px auto;
+  column-gap: 10px;
+  row-gap: 10px;
+  width: 200px;
+  height: 200px;
 }
 
 .game-grid-container .game-grid-box {
   position: relative;
-  border: 2px solid #000000;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px #ffffff;
 }
 
-.game-grid-container .top-left {
-  border-top: none;
-  border-left: none;
+.game-grid-container .game-grid-box:hover {
+  box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px #ffffff, inset 3px 3px 3px #cbced1, inset -3px -3px 3px #ffffff;
 }
 
-.game-grid-container .top-center {
-  border-top: none;
-}
-
-.game-grid-container .top-right {
-  border-top: none;
-  border-right: none;
-}
-
-.game-grid-container .center-left {
-  border-left: none;
-}
-
-.game-grid-container .center-right {
-  border-right: none;
-}
-
-.game-grid-container .bottom-left {
-  border-left: none;
-  border-bottom: none;
-}
-
-.game-grid-container .bottom-center {
-  border-bottom: none;
-}
-
-.game-grid-container .bottom-right {
-  border-right: none;
-  border-bottom: none;
-}
-
-.game-grid-container .circle {
-  display: none;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 45px;
-  height: 45px;
-}
-
+.game-grid-container .cross,
+.game-grid-container .cross-hover,
+.game-grid-container .circle,
 .game-grid-container .circle-hover {
   display: none;
   position: absolute;
   top: 15px;
   left: 15px;
-  width: 45px;
-  height: 45px;
 }
 
-.game-grid-container .cross {
-  display: none;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 45px;
-  height: 45px;
-}
-
-.game-grid-container .cross-hover {
-  display: none;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 45px;
-  height: 45px;
+.svg-icon {
+  width: 30px;
+  height: 30px;
 }
 /* -------------------- game-grid-container start -------------------- */
 
-/* -------------------- match detail grid container end -------------------- */
-.match-detail-grid-container {
+/* -------------------- player container start -------------------- */
+.player-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0 auto;
-  width: 100%;
-  border: 1px solid red;
+  grid-template-rows: repeat(3, 50px);
+  row-gap: 20px;
+  padding: 5px;
 }
 
-.match-detail-grid-container p {
-  width: 100%;
-  text-align: center;
+.player-container .player-first {
+  display: grid;
+  grid-template-columns: 50px 100px;
+  column-gap: 10px;
 }
 
-.match-detail-grid-container .player-point {
-  font-size: 24px;
-  color: #ffffff;
+.player-container .symbol-x,
+.player-container .player-first-name,
+.player-container .point-x,
+.player-container .point-o,
+.player-container .player-second-name,
+.player-container .symbol-o {
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px #ffffff;
 }
 
-.match-detail-grid-container .title-name {
-  margin-top: 10px;
-  font-size: 22px;
-  color: #cccccc;
+.player-container .player-point {
+  display: grid;
+  grid-template-columns: repeat(2, 75px);
+  column-gap: 10px;
 }
 
-@media only screen and (max-width: 600px) {
-  .match-detail-grid-container {
-    width: 100%;
-  }
+.player-container .player-second {
+  display: grid;
+  grid-template-columns: 100px 50px;
+  column-gap: 10px;
 }
-/* -------------------- match detail grid container end -------------------- */
+/* -------------------- player container end -------------------- */
