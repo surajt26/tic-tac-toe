@@ -40,7 +40,7 @@ body {
 
 /* -------------------- popup start -------------------- */
 .name-container {
-  display: none;
+  display: block;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -209,8 +209,36 @@ body {
 .round-draw-container .time-name,
 .round-draw-container .draw-name,
 .round-draw-container .draw-number {
+  position: relative;
   border-radius: 5px;
   box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px #ffffff;
+}
+
+.round-draw-container .svg-icon-sym {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+}
+
+.round-draw-container .sym-o {
+  display: none;
+}
+
+.round-draw-container p {
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  background-color: red;
+  background-image: linear-gradient(45deg, #cb2d3e, #ef473a);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 /* -------------------- round & draw end -------------------- */
 
@@ -238,16 +266,29 @@ body {
 .game-grid-container .cross,
 .game-grid-container .cross-hover,
 .game-grid-container .circle,
-.game-grid-container .circle-hover {
+.game-grid-container .circle-hover,
+.svg-box {
   display: none;
   position: absolute;
   top: 15px;
   left: 15px;
 }
 
+.svg-box-hover {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
 .svg-icon {
   width: 30px;
   height: 30px;
+}
+
+.svg-icon-hover {
+  width: 20px;
+  height: 20px;
 }
 /* -------------------- game-grid-container start -------------------- */
 
@@ -285,5 +326,26 @@ body {
   display: grid;
   grid-template-columns: 100px 50px;
   column-gap: 10px;
+}
+
+.player-container .svg-icon-sym {
+  width: 20px;
+  height: 20px;
+  margin: 15px;
+}
+
+.player-container p {
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  background-color: red;
+  background-image: linear-gradient(45deg, #cb2d3e, #ef473a);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 /* -------------------- player container end -------------------- */
