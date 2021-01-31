@@ -660,6 +660,8 @@ var roundNumber = document.getElementById('round');
 var drawNumber = document.getElementById('draw');
 var pointxNumber = document.getElementById('point-x');
 var pointoNumber = document.getElementById('point-o');
+/* mobile view */
+var mobileDrawNumber = document.getElementById('mobile-draw');
 
 /* function for combination */
 function combinationCheck() {
@@ -700,6 +702,8 @@ function combinationCheck() {
       round++;
       roundNumber.innerHTML = round;
       drawNumber.innerHTML = draw;
+      /* mobile view */
+      mobileDrawNumber.innerHTML = draw;
       alert("Match Draw");
     }
   }

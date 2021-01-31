@@ -25,23 +25,27 @@
   
   <!-------------------- name-container start -------------------->
   <div class="name-container" id="name-container">
-    <h2>Tic Tac Toe</h2>
-    <img type="image/png" src="image/tic-tac-toe.png">
-    <p class="name-headline">Enter the name of players</p>
-    <div class="player-name">
-      <div class="name">
-        <input type="text" name="firstName" placeholder="First Player" maxlength="10" id="first-name" onkeyup="checkInput()">
+    <div class="inner-container">
+      <div class="image-container">
+
       </div>
-      <div class="name">
-        <input type="text" name="secondName" placeholder="Second Player" maxlength="10" id="second-name" onkeyup="checkInput()">
+      <!--<img type="image/png" src="image/tic-tac-toe.png">-->
+      <h2>Tic Tac Toe</h2>
+      <div class="player-name">
+        <div class="name">
+          <input type="text" name="firstName" placeholder="First Player" maxlength="10" id="first-name" onkeyup="checkInput()">
+        </div>
+        <div class="name">
+          <input type="text" name="secondName" placeholder="Second Player" maxlength="10" id="second-name" onkeyup="checkInput()">
+        </div>
       </div>
+      <p class="start" onclick="start()">Start</p>
+      <p class="skip" onclick="skip()">skip</p>
+      <p class="error-message" id="error-message-first">Don't leave empty, Enter the name !!</p>
+      <p class="error-message" id="error-message-second">why you do this again, Please enter the name !!</p>
+      <p class="error-message" id="error-message-third">Don't be over smart, Enter the name !!</p>
+      <p class="error-message" id="error-message-fourth">Again, That's enough, Enter the name !!</p>
     </div>
-    <p class="start" onclick="start()">Start</p>
-    <p class="skip" onclick="skip()">skip</p>
-    <p class="error-message" id="error-message-first">Don't leave empty, Enter the name !!</p>
-    <p class="error-message" id="error-message-second">why you do this again, Please enter the name !!</p>
-    <p class="error-message" id="error-message-third">Don't be over smart, Enter the name !!</p>
-    <p class="error-message" id="error-message-fourth">Again, That's enough, Enter the name !!</p>
   </div>
   <!-------------------- name-container end -------------------->
   
@@ -51,6 +55,9 @@
       <div class="round-draw-top">
         <div class="round-name"><p>Round</p></div>
         <div class="round-number"><p id="round">1</p></div>
+        <!-- mobile view -->
+        <div class="mobile-draw-number desktop-hide"><p id="mobile-draw">0</p></div>
+        <div class="mobile-draw-name desktop-hide"><p>Draw</p></div>
       </div>
       <div class="round-draw-center">
         <div class="time">
@@ -81,7 +88,7 @@
         </div>
         <div class="time-name"><p>Your Turn</p></div>
       </div>
-      <div class="round-draw-bottom">
+      <div class="round-draw-bottom  mobile-hide">
         <div class="draw-name"><p>Draw</p></div>
         <div class="draw-number"><p id="draw">0</p></div>
       </div>
@@ -622,6 +629,24 @@
         <div class="player-first-name">
           <p id="first-title-name">Player 1</p>
         </div>
+        <div class="mobile-second-title-name desktop-hide">
+          <p id="mobile-second-title-name">Player 2</p>
+        </div>
+        <div class="mobile-symbol-o desktop-hide">
+          <svg class="svg-icon-sym" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" version="1.1" x="0" y="0" viewBox="0 0 341.333 341.333" style="enable-background:new 0 0 512 512" xml:space="preserve"><g>
+            <defs>
+              <linearGradient id="svg-color-mo-sy2" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#cb2d3e;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#ef473a;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <g xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path fill="url(#svg-color-mo-sy2)" d="M170.667,0C76.41,0,0,76.41,0,170.667s76.41,170.667,170.667,170.667s170.667-76.41,170.667-170.667S264.923,0,170.667,0z     M170.667,298.667c-70.692,0-128-57.308-128-128s57.308-128,128-128s128,57.308,128,128S241.359,298.667,170.667,298.667z" data-original="#000000" style=""/>
+            </g>
+          </g>
+          </g></svg>
+        </div>
       </div>
       <div class="player-point">
         <div class="point-x">
@@ -631,7 +656,7 @@
           <p id="point-o">0</p>
         </div>
       </div>
-      <div class="player-second">
+      <div class="player-second mobile-view">
         <div class="player-second-name">
           <p id="second-title-name">Player 2</p>
         </div>

@@ -38,9 +38,22 @@ body {
 }
 /* -------------------- bye bye end -------------------- */
 
-/* -------------------- popup start -------------------- */
+/* -------------------- name container start -------------------- */
 .name-container {
   display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 10px;
+  background-color: #ecf0f3;
+  z-index: 10;
+}
+
+.name-container .inner-container {
+  width: 320px;
+  height: 480px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -49,21 +62,20 @@ body {
   -ms-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
-  width: 600px;
-  height: 420px;
-  padding: 10px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  z-index: 10;
+  background: #ecf0f3;
+  border-radius: 20px;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
 }
 
 .name-container h2 {
   width: 100%;
   text-align: center;
+  font-size: 28px;
   font-weight: 500;
+  color: #5e6063;
 }
 
-.name-container img {
+.name-container .image-container {
   margin: 20px 50%;
   transform: translateX(-50%);
   -moz-transform: translateX(-50%);
@@ -72,18 +84,23 @@ body {
   -webkit-transform: translateX(-50%);
   width: 125px;
   height: 125px;
-  border-radius: 5px;
-}
-
-.name-container .name-headline {
-  width: 100%;
-  text-align: center;
+  background-image: url("../image/tic-tac-toe.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 
+  /* logo shadow */
+  0px 0px 2px #5f5f5f,
+  /* offset */
+  0px 0px 0px 5px #ecf0f3,
+  /*bottom right */
+  8px 8px 15px #a7aaaf,
+  /* top left */
+  -8px -8px 15px #ffffff
+  ;
 }
 
 .name-container .player-name {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 100%;
   margin-top: 20px;
 }
 
@@ -140,36 +157,12 @@ body {
   font-size: 14px;
   color: #ff0000;
 }
-
-/* media for 600 width */
-@media only screen and (max-width: 600px) {
-  .name-container {
-    width: 100%;
-    border-radius: 0;
-  }
-}
-
-/* media for 450 width */
-@media only screen and (max-width: 450px) {
-  .name-container .player-name {
-    grid-template-columns: 100%;
-    grid-template-rows: repeat(2, 40px);
-  }
-
-  .name-container .start {
-    margin-top: 0;
-  }
-
-  .name-container .skip {
-    margin-top: 5px;
-  }
-}
-/* -------------------- popup end -------------------- */
+/* -------------------- name container end -------------------- */
 
 /* -------------------- main grid star -------------------- */
 .main-grid {
   display: grid;
-  grid-template-columns: 175px 200px 175px;
+  grid-template-columns: 165px 200px 165px;
   column-gap: 25px;
   position: absolute;
   top: 50%;
@@ -179,6 +172,19 @@ body {
   -ms-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
+}
+
+@media only screen and (max-width: 600px) {
+  .main-grid {
+    grid-template-columns: 330px;
+    row-gap: 15px;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .main-grid {
+    grid-template-columns: 300px;
+  }
 }
 /* -------------------- main grid end -------------------- */
 
@@ -208,7 +214,10 @@ body {
 .round-draw-container .time,
 .round-draw-container .time-name,
 .round-draw-container .draw-name,
-.round-draw-container .draw-number {
+.round-draw-container .draw-number,
+/* mobile view */
+.round-draw-container .mobile-draw-number,
+.round-draw-container .mobile-draw-name {
   position: relative;
   border-radius: 5px;
   box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px #ffffff;
@@ -239,6 +248,48 @@ body {
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
+
+.desktop-hide {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .round-draw-container {
+    grid-template-rows: repeat(2, 50px);
+    padding: 0;
+    row-gap: 10px;
+    
+  }
+
+  .round-draw-container .mobile-hide {
+    display: none;
+  }
+
+  .round-draw-container .round-draw-top {
+    grid-template-columns: 100px 50px 50px 100px;
+  }
+
+  .round-draw-container .round-draw-center {
+    width: 160px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%); 
+  }
+
+  .desktop-hide {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .round-draw-container .round-draw-top {
+    grid-template-columns: 85px 50px 50px 85px;
+  }
 }
 /* -------------------- round & draw end -------------------- */
 
@@ -290,6 +341,18 @@ body {
   width: 20px;
   height: 20px;
 }
+
+@media only screen and (max-width: 600px) {
+  .game-grid-container {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+}
 /* -------------------- game-grid-container start -------------------- */
 
 /* -------------------- player container start -------------------- */
@@ -311,7 +374,10 @@ body {
 .player-container .point-x,
 .player-container .point-o,
 .player-container .player-second-name,
-.player-container .symbol-o {
+.player-container .symbol-o,
+/* mobile view */
+.player-container .mobile-second-title-name,
+.player-container .mobile-symbol-o {
   border-radius: 5px;
   box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px #ffffff;
 }
@@ -347,5 +413,48 @@ body {
   -webkit-text-fill-color: transparent; 
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
+}
+
+.player-container .desktop-hide {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .player-container {
+    grid-template-rows: repeat(2, 50px);
+    row-gap: 10px;
+    padding: 0;
+  }
+
+  .player-container .player-first {
+    grid-template-rows: 50px;
+    grid-template-columns: 50px 100px 100px 50px;
+    column-gap: 10px;
+  }
+
+  .player-container .player-point {
+    width: 160px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+  }
+
+  .player-container .desktop-hide {
+    display: block;
+  }
+
+  .player-container .mobile-view {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 330px) {
+  .player-container .player-first {
+    grid-template-columns: 50px 85px 85px 50px;
+  }
 }
 /* -------------------- player container end -------------------- */
