@@ -26,25 +26,20 @@
   <!-------------------- name-container start -------------------->
   <div class="name-container" id="name-container">
     <div class="inner-container">
-      <div class="image-container">
-
-      </div>
-      <!--<img type="image/png" src="image/tic-tac-toe.png">-->
+      <div class="image-container"></div>
       <h2>Tic Tac Toe</h2>
-      <div class="player-name">
-        <div class="name">
-          <input type="text" name="firstName" placeholder="First Player" maxlength="10" id="first-name" onkeyup="checkInput()">
-        </div>
-        <div class="name">
-          <input type="text" name="secondName" placeholder="Second Player" maxlength="10" id="second-name" onkeyup="checkInput()">
-        </div>
+      <p>BETA</p>
+      <div class="name-fields">
+        <div class="player-name player-first-input"><input type="text" name="firstName" placeholder="First Player Name" maxlength="10" id="first-name" onkeyup="checkInput()"></div>
+        <div class="player-name player-second-input"><input type="text" name="secondName" placeholder="Second Player Name" maxlength="10" id="second-name" onkeyup="checkInput()"></div>
       </div>
       <p class="start" onclick="start()">Start</p>
       <p class="skip" onclick="skip()">skip</p>
-      <p class="error-message" id="error-message-first">Don't leave empty, Enter the name !!</p>
-      <p class="error-message" id="error-message-second">why you do this again, Please enter the name !!</p>
-      <p class="error-message" id="error-message-third">Don't be over smart, Enter the name !!</p>
-      <p class="error-message" id="error-message-fourth">Again, That's enough, Enter the name !!</p>
+      <!-- error messages -->
+      <p class="error-message" id="error-message-first">Don't leave empty,<br>Enter the name !!</p>
+      <p class="error-message" id="error-message-second">why did you this again,<br>Please enter the name !!</p>
+      <p class="error-message" id="error-message-third">Don't be over smart,<br>Enter the name !!</p>
+      <p class="error-message" id="error-message-fourth">Again, That's enough,<br>Enter the name !!</p>
     </div>
   </div>
   <!-------------------- name-container end -------------------->

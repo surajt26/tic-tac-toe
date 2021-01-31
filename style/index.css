@@ -67,23 +67,15 @@ body {
   box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #ffffff;
 }
 
-.name-container h2 {
-  width: 100%;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 500;
-  color: #5e6063;
-}
-
 .name-container .image-container {
-  margin: 20px 50%;
+  margin: 30px 50% 15px;
   transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
   background-image: url("../image/tic-tac-toe.png");
   background-size: cover;
   background-position: center;
@@ -100,43 +92,86 @@ body {
   ;
 }
 
-.name-container .player-name {
-  margin-top: 20px;
+.name-container h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 500;
+  color: #4c4c4c;
+  letter-spacing: .5px;
 }
 
-.name-container .name input[type="text"] {
-  width: 60%;
-  margin: 0 50%;
+.name-container p {
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
+  color: #595959;
+  letter-spacing: 2px;
+}
+
+.name-container .name-fields {
+  width: 260px;
+  margin: 40px 50% 35px;
   transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
-  padding: 4px;
-  font-size: 18px;
+}
+
+.name-container .player-second-input {
+  margin-top: 20px;
+}
+
+.name-container .player-name {
+  border-radius: 20px;
+  box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #ffffff;
+}
+
+.name-container input[type="text"] {
+  width: 100%;
+  padding: 10px;
   text-align: center;
+  font-size: 16px;
+  color: #555;
   border: none;
-  border-bottom: 1px solid rgba(0,0,0,.5);
+  background: none;
   outline: none;
 }
 
+.name-container input[type="text"]::placeholder {
+  font-size: 14px;
+  color: #808080;
+}
+
 .name-container .start {
-  margin-top: 30px;
-  width: 100%;
+  margin: 0 50%;
+  padding: 10px;
+  width: 260px;
   text-align: center;
-  font-size: 24px;
+  font-size: 16px;
+  color: #ffffff;
+  transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
   cursor: pointer;
+  background-image: linear-gradient(45deg, #cb2d3e, #ef473a);
+  border-radius: 20px;
+  box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #ffffff;
 }
 
 .name-container .start:hover {
-  color: #31343a;
+  background-image: linear-gradient(45deg, #ef473a, #cb2d3e);
 }
 
 .name-container .skip {
   margin: 10px auto 0;
   width: 30px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
+  color: #555;
   cursor: pointer;
 }
 
@@ -145,17 +180,17 @@ body {
   border-bottom: 1px solid #31343a;
 }
 
-.name-container .skip:hover ~ #error-message {
-  margin-top: 19px;
-}
-
 .name-container .error-message {
   display: none;
-  width: 100%;
-  margin-top: 20px;
+  width: 280px;
+  margin: 10px 20px 0;
+  padding: 5px;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
   color: #ff0000;
+  border-radius: 4px;
+  box-shadow: 3px 3px 5px #cbced1, -3px -3px 5px #ffffff, inset 3px 3px 3px #cbced1, inset -3px -3px 3px #ffffff;
 }
 /* -------------------- name container end -------------------- */
 
