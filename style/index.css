@@ -63,7 +63,7 @@ body {
   color: #cccccc;
 }
 
-@media only screen and (max-height: 480px) {
+@media only screen and (max-height: 479px) {
   .screen-compatible-container {
     display: block;
   }
@@ -271,6 +271,12 @@ body {
   .main-grid {
     grid-template-columns: 330px;
     row-gap: 15px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .main-grid {
+    row-gap: 10px;
   }
 }
 
@@ -551,3 +557,32 @@ body {
   }
 }
 /* -------------------- player container end -------------------- */
+
+/* -------------------- about start -------------------- */
+.about {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  font-size: 12px;
+  text-decoration: none;
+  background-color: red;
+  background-image: linear-gradient(45deg, #cb2d3e, #ef473a);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  cursor: pointer;
+}
+
+.about:hover {
+  background-image: linear-gradient(45deg, #ef473a, #cb2d3e);
+}
+
+@media only screen and (max-width: 410px) {
+  .about {
+    font-size: 10px;
+  }
+}
+/* -------------------- about end -------------------- */
